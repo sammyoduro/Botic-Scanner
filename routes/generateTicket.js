@@ -21,7 +21,7 @@ worksheet.cell(1,5).string("Ticket Messages").style(style);
 
 
 
-mongoose.connect('mongodb://localhost:27017/botics-escanner', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/BOTICSCANNERDB', { useNewUrlParser: true });
 var db = mongoose.connection;
 db.once('open',function () {
   console.log('Database online');

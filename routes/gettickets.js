@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("botics-escanner");
+    var dbo = db.db("BOTICSCANNERDB");
 
     dbo.collection("TicketPin").find({'verified':'verified'},{ sort :{ timestamp : -1}}).toArray(function(err, result) {
       if (err) throw err;

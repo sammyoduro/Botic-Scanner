@@ -10,7 +10,7 @@ router.post('/', function(req, res) {
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("botics-escanner");
+    var dbo = db.db("BOTICSCANNERDB");
 if (req.body.resetTicket == 'reset') {
   dbo.collection("TicketPin").updateMany({},{$set: {'verified' : '','timestamp' : ''}},function (err, result) {
     if (err) throw err;

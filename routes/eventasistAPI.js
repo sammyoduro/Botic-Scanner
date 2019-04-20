@@ -13,7 +13,7 @@ router.post('/', function(req, res) {
   let ticket_pin = req.query.ticket_pin.toUpperCase();
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("botics-escanner");
+    var dbo = db.db("BOTICSCANNERDB");
 
     async.parallel([
       function(callback) {
