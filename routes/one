@@ -1,0 +1,47 @@
+var express        = require('express');
+var router         = express.Router();
+var GenTicket        = require('../models/ticket_generator');
+var excel = require('excel4node');
+const randomstring= require('randomstring');
+var async = require('async');
+
+
+
+router.get('/', function(req, res) {
+let genticket =[];
+let getGenPins = []
+
+for (var i = 2; i <= 131000; i++) {
+var GenNumber = randomstring.generate(6).toUpperCase();
+//
+// if (GenNumber.indexOf('BTC')>-1 == true) {
+//   console.log("sense BTC");
+//   return true;
+// }
+genticket[i] = new GenTicket({
+        event_name :"MTN connect",
+        ticket_pin :"BTC "+GenNumber+" BTC",
+        messages   :"MTN MUSIC FESTIVAL \n E Ticket number: BTC "+GenNumber+" BTC \n Expires on: 2019-05-08 23:59 \n Venue: AICC \n VIP25821494 \n Validate your ticket at the entrance \n Powered By Botics Technologies"
+      })
+}
+var done = 0;
+genticket.forEach(function (doc) {
+  doc.save(function(err){
+    if (err) {
+         console.log(err);
+       }
+         done++;
+               if( done === GenTicket.length ){
+
+                 console.log("done");
+               }
+  })
+})
+
+
+
+
+})
+
+
+module.exports = router;

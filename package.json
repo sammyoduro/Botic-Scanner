@@ -1,0 +1,33 @@
+{
+  "name": "botics-escanner",
+  "version": "1.0.0",
+  "description": "Event ticketing software ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Oduro",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.4",
+    "csurf": "^1.9.0",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.1",
+    "excel4node": "^1.7.1",
+    "express": "^4.16.4",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.2",
+    "node-datetime": "^2.1.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "randomstring": "^1.1.5",
+    "sha1": "^1.1.1"
+  }
+}
