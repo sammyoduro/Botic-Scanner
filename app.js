@@ -22,8 +22,8 @@ app.use('/eventasistapi/ProcessScanner', eventasistAPI);
 app.use('/eventasistapi/GetTickets', gettickets);
 app.use('/eventasistapi/reset', reset);
 
-// var generateTicket    = require('./routes/generateTicket');
-// app.use('/generateTicket', generateTicket);
+var generateTicket    = require('./routes/generateTicket');
+app.use('/generateTicket', generateTicket);
 //Start server
 var server = app.listen(3000,function () {
   console.log('Server started on port 3000...');

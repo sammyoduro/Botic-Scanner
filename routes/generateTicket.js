@@ -14,10 +14,12 @@ var style = workbook.createStyle({
   numberFormat: '$#,##0.00; ($#,##0.00); -'
 });
 
-worksheet.cell(1,2).string("Event Name").style(style);
-worksheet.cell(1,3).string("Ticket Unique Pin").style(style);
-worksheet.cell(1,4).string("Filter Pin").style(style);
-worksheet.cell(1,5).string("Ticket Messages").style(style);
+worksheet.cell(1,2).string("event_name").style(style);
+worksheet.cell(1,3).string("ticket_pin").style(style);
+worksheet.cell(1,4).string("Filter_Pin").style(style);
+worksheet.cell(1,5).string("messages").style(style);
+worksheet.cell(1,6).string("verified").style(style);
+worksheet.cell(1,7).string("timestamp").style(style);
 
 
 
@@ -61,7 +63,7 @@ batch.insert(record);
 batch.execute(function(err, result) {
   console.dir(err);
   console.dir(result);
-  workbook.write('boticsScanner.xlsx');
+  workbook.write('boticsScanner.csv');
   db.close();
 });
 
